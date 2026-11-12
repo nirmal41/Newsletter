@@ -1,5 +1,5 @@
 /* ==========================================================================
-   SIDAT Technologies & Digital - 100% Full Viewport Responsive Stylesheet
+   SIDAT Technologies & Digital - Exact Figma 600px Newsletter Card Stylesheet
    Audited & Pixel-Accurately Matched with Figma Node 3263:2389 & Node 3295:497
    ========================================================================== */
 
@@ -20,6 +20,7 @@
   --ice-blue: #E8FAFF;
   --audit-teal: #3AA0A4;
   --border-light: #E5E5E5;
+  --backdrop-gray: #EEF2F5;
   --font-tasa: 'TASA Orbiter Display', 'TASA Orbiter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-inter: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
@@ -34,28 +35,39 @@ html, body {
   width: 100%;
   min-height: 100%;
   overflow-x: hidden;
-  background-color: #ffffff;
 }
 
+/* Page background: soft neutral gray so the 600px newsletter card sits clearly defined */
 body {
+  background-color: var(--backdrop-gray);
   font-family: var(--font-tasa);
   color: var(--text-dark);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0;
+  margin: 0;
 }
 
-/* Master Wrapper spanning 100% viewport */
+/* ==========================================================================
+   Master Newsletter Card: Exactly 600px width matching Figma artboard spec
+   ========================================================================== */
 .newsletter-card {
   width: 100%;
+  max-width: 600px;
   min-height: 100vh;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   background-color: #ffffff;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08), 0 0 1px rgba(0, 0, 0, 0.1);
   position: relative;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
-/* Central Content Container: max-width 900px gives the perfect balance on widescreen */
+/* Inner containers matching Figma's px-[30px] padding */
 .header-container,
 .hero-container,
 .risk-container,
@@ -64,15 +76,14 @@ body {
 .signoff-container,
 .footer-container {
   width: 100%;
-  max-width: 900px;
-  margin: 0 auto;
-  padding-left: 32px;
-  padding-right: 32px;
+  padding-left: 30px;
+  padding-right: 30px;
+  box-sizing: border-box;
 }
 
 /* ==========================================================================
    1. Header Navigation
-   Figma: Inter Medium 16px, tracking -1px, height 74px, bg #f9fdf8
+   Figma: Inter Medium 16px, tracking -1px, height 74px, bg #f9fdf8, px-[30px]
    ========================================================================== */
 .header {
   width: 100%;
@@ -143,11 +154,12 @@ body {
 /* ==========================================================================
    2. Hero Section
    Figma:
+   - Width: 600px, bg #18557e
    - Heading: TASA Orbiter Display SemiBold 44px, line-height 100%, tracking -1.32px
    - Subtitle: TASA Orbiter Display Medium 16px, tracking -0.32px, uppercase
    - Greeting: TASA Orbiter Display Regular 18px, tracking -0.36px
    - Body: TASA Orbiter Display Regular 16px, line-height 20px, tracking -0.32px
-   - Avatar: 237px x 265px waist-up portrait sitting on bottom boundary
+   - Avatar: 237px x 265px waist-up portrait sitting flush on bottom boundary
    ========================================================================== */
 .hero {
   width: 100%;
@@ -157,51 +169,52 @@ body {
 }
 
 .hero-container {
-  padding-top: 48px;
+  padding-top: 44px;
+  padding-bottom: 0;
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  gap: 32px;
+  gap: 12px;
 }
 
 .hero-text-block {
-  flex: 1 1 500px;
-  max-width: 520px;
-  padding-bottom: 44px;
+  flex: 1 1 300px;
+  max-width: 310px;
+  padding-bottom: 36px;
   z-index: 2;
 }
 
 .hero-heading {
   font-family: var(--font-tasa);
   font-weight: 600;
-  font-size: clamp(30px, 3.8vw, 44px);
+  font-size: 38px;
   line-height: 100%;
   letter-spacing: -1.32px;
   text-transform: uppercase;
   color: #ffffff;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
 }
 
 .hero-subheading {
   font-family: var(--font-tasa);
   font-weight: 500;
-  font-size: 16px;
+  font-size: 15px;
   letter-spacing: -0.32px;
   text-transform: uppercase;
   color: var(--secondary-green);
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 
 .hero-intro-group {
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  max-width: 480px;
+  gap: 12px;
+  max-width: 290px;
 }
 
 .hero-greeting {
   font-family: var(--font-tasa);
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 400;
   letter-spacing: -0.36px;
   color: #ffffff;
@@ -209,7 +222,7 @@ body {
 
 .hero-body {
   font-family: var(--font-tasa);
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 400;
   line-height: 20px;
   letter-spacing: -0.32px;
@@ -218,20 +231,21 @@ body {
 }
 
 .hero-visual {
-  flex: 0 0 250px;
+  flex: 0 0 215px;
   display: flex;
   align-items: flex-end;
-  justify-content: center;
+  justify-content: flex-end;
   position: relative;
   margin-bottom: 0;
   line-height: 0;
 }
 
 .hero-avatar-img {
-  width: 250px;
+  width: 215px;
   max-width: 100%;
   height: auto;
   display: block;
+  vertical-align: bottom;
   user-select: none;
   pointer-events: none;
 }
@@ -239,6 +253,7 @@ body {
 /* ==========================================================================
    3. Risk Warning Section
    Figma:
+   - Width: 600px, bg #ffffff
    - Heading: TASA Orbiter Display SemiBold 24px, line-height 100%, tracking -1.2px
    - Paragraphs: TASA Orbiter Display Regular 14px, line-height 20px, tracking -0.28px
    - Avatar: 210px x 250px waist-up portrait holding warning sign
@@ -246,35 +261,35 @@ body {
 .risk-section {
   width: 100%;
   background-color: #ffffff;
-  padding: 56px 0 32px 0;
+  padding: 48px 0 28px 0;
   position: relative;
 }
 
 .risk-heading {
   font-family: var(--font-tasa);
   font-weight: 600;
-  font-size: clamp(20px, 2.5vw, 24px);
+  font-size: 22px;
   line-height: 100%;
   letter-spacing: -1.2px;
   text-align: center;
   text-transform: uppercase;
   color: var(--text-dark);
-  margin-bottom: 36px;
+  margin-bottom: 32px;
 }
 
 .risk-grid {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 36px;
+  gap: 16px;
 }
 
 .risk-text-block {
-  flex: 1 1 500px;
-  max-width: 520px;
+  flex: 1 1 310px;
+  max-width: 320px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 18px;
 }
 
 .risk-paragraph {
@@ -287,14 +302,14 @@ body {
 }
 
 .risk-visual {
-  flex: 0 0 220px;
+  flex: 0 0 195px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
 }
 
 .risk-avatar-img {
-  width: 210px;
+  width: 195px;
   max-width: 100%;
   height: auto;
   display: block;
@@ -304,6 +319,7 @@ body {
 /* ==========================================================================
    4. Security Audit CTA Section
    Figma:
+   - Width: 600px, bg #ffffff
    - Lead Paragraph: TASA Orbiter Display Medium 14px, line-height 20px, tracking -0.28px, text-right
    - Body Paragraphs: TASA Orbiter Display Regular 14px, line-height 20px, tracking -0.28px, text-right
    - Avatar: 202px x 229px waist-up smiling portrait on left
@@ -312,7 +328,7 @@ body {
 .audit-section {
   width: 100%;
   background-color: #ffffff;
-  padding: 32px 0 56px 0;
+  padding: 28px 0 48px 0;
   position: relative;
 }
 
@@ -320,18 +336,18 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 36px;
+  gap: 16px;
 }
 
 .audit-visual {
-  flex: 0 0 215px;
+  flex: 0 0 190px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 }
 
 .audit-avatar-img {
-  width: 205px;
+  width: 190px;
   max-width: 100%;
   height: auto;
   display: block;
@@ -339,11 +355,11 @@ body {
 }
 
 .audit-text-block {
-  flex: 1 1 500px;
-  max-width: 520px;
+  flex: 1 1 310px;
+  max-width: 320px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 18px;
   text-align: right;
 }
 
@@ -368,7 +384,7 @@ body {
 .audit-cta-wrapper {
   display: flex;
   justify-content: center;
-  margin-top: 36px;
+  margin-top: 32px;
   width: 100%;
 }
 
@@ -402,7 +418,7 @@ body {
 /* ==========================================================================
    5. Talentra New Year Hire Section (Figma Node 3264:2634 & Avatar Node 3295:497)
    Figma:
-   - Background: #E8FAFF
+   - Width: 600px, bg #E8FAFF
    - Heading: TASA Orbiter Display SemiBold 24px, line-height 100%, tracking -0.96px
    - Paragraphs: TASA Orbiter Display Regular 14px, line-height 20px, tracking -0.28px
    - Avatar Node 3295:497: 171px x 349px thumbs-up portrait
@@ -411,7 +427,7 @@ body {
 .hire-section {
   width: 100%;
   background-color: var(--ice-blue);
-  padding: 56px 0 0 0;
+  padding: 48px 0 0 0;
   position: relative;
   overflow: hidden;
 }
@@ -419,29 +435,29 @@ body {
 .hire-heading {
   font-family: var(--font-tasa);
   font-weight: 600;
-  font-size: clamp(20px, 2.5vw, 24px);
+  font-size: 22px;
   line-height: 100%;
   letter-spacing: -0.96px;
   text-align: center;
   text-transform: uppercase;
   color: var(--text-dark);
-  margin-bottom: 36px;
+  margin-bottom: 32px;
 }
 
 .hire-grid {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  gap: 36px;
+  gap: 16px;
 }
 
 .hire-text-block {
-  flex: 1 1 500px;
-  max-width: 520px;
+  flex: 1 1 310px;
+  max-width: 320px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  padding-bottom: 40px;
+  gap: 18px;
+  padding-bottom: 32px;
 }
 
 .hire-paragraph {
@@ -454,7 +470,7 @@ body {
 }
 
 .hire-visual {
-  flex: 0 0 220px;
+  flex: 0 0 185px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -464,7 +480,7 @@ body {
 }
 
 .hire-avatar-img {
-  width: 180px;
+  width: 165px;
   max-width: 100%;
   height: auto;
   display: block;
@@ -473,7 +489,7 @@ body {
 
 .btn-talentra {
   margin-top: -24px;
-  margin-bottom: 36px;
+  margin-bottom: 28px;
   position: relative;
   z-index: 2;
   display: inline-flex;
@@ -481,13 +497,13 @@ body {
   justify-content: center;
   gap: 8px;
   height: 40px;
-  padding: 0 24px;
+  padding: 0 20px;
   background-color: #ffffff;
   color: var(--text-dark);
   text-decoration: none;
   font-family: var(--font-tasa);
   font-weight: 500;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 20px;
   letter-spacing: -0.32px;
   border-radius: 100px;
@@ -504,6 +520,7 @@ body {
 /* ==========================================================================
    6. Signoff Section
    Figma:
+   - Width: 600px, bg #ffffff
    - Quote: TASA Orbiter Display Medium 20px, line-height 23px, tracking -0.4px
    - Valediction: TASA Orbiter Display Medium 20px, line-height 23px, tracking -0.4px
    - Signature: TASA Orbiter Display Medium 14px, line-height 20px, tracking -0.28px
@@ -511,7 +528,7 @@ body {
 .signoff-section {
   width: 100%;
   background-color: #ffffff;
-  padding: 48px 0 56px 0;
+  padding: 44px 0 48px 0;
   position: relative;
 }
 
@@ -519,25 +536,25 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 32px;
-  margin-bottom: 32px;
+  gap: 20px;
+  margin-bottom: 28px;
 }
 
 .signoff-quote {
   font-family: var(--font-tasa);
   font-weight: 500;
-  font-size: 20px;
-  line-height: 23px;
+  font-size: 18px;
+  line-height: 22px;
   letter-spacing: -0.4px;
   color: var(--text-dark);
-  max-width: 460px;
+  max-width: 320px;
 }
 
 .signoff-valediction {
   font-family: var(--font-tasa);
   font-weight: 500;
-  font-size: 20px;
-  line-height: 23px;
+  font-size: 18px;
+  line-height: 22px;
   letter-spacing: -0.4px;
   color: var(--text-dark);
   text-align: right;
@@ -561,6 +578,7 @@ body {
 /* ==========================================================================
    7. Footer Section
    Figma:
+   - Width: 600px, bg #18557e
    - Contact items: TASA Orbiter Display Regular 16px, tracking -0.32px
    - Social tiles: 42.84px x 34.29px, radius 4.86px, bg rgba(255,255,255,0.1)
    ========================================================================== */
@@ -575,13 +593,13 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 32px;
+  gap: 24px;
 }
 
 .footer-brand-col {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 18px;
 }
 
 .footer-logo-img {
@@ -617,7 +635,7 @@ body {
 .footer-contact-col {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 18px;
 }
 
 .contact-item {
@@ -628,7 +646,7 @@ body {
   text-decoration: none;
   font-family: var(--font-tasa);
   font-weight: 400;
-  font-size: 16px;
+  font-size: 15px;
   letter-spacing: -0.32px;
   transition: opacity 0.2s ease;
 }
@@ -642,11 +660,17 @@ body {
 }
 
 /* ==========================================================================
-   Responsive Breakpoints
+   Responsive Breakpoints (Mobile Devices Under 560px)
    ========================================================================== */
+@media (max-width: 560px) {
+  body {
+    background-color: #ffffff;
+  }
 
-/* Tablet (700px to 920px) */
-@media (max-width: 920px) {
+  .newsletter-card {
+    box-shadow: none;
+  }
+
   .header-container,
   .hero-container,
   .risk-container,
@@ -654,69 +678,24 @@ body {
   .hire-container,
   .signoff-container,
   .footer-container {
-    padding-left: 24px;
-    padding-right: 24px;
-  }
-
-  .hero-visual {
-    flex: 0 0 220px;
-  }
-
-  .hero-avatar-img {
-    width: 220px;
-  }
-
-  .risk-visual {
-    flex: 0 0 190px;
-  }
-
-  .risk-avatar-img {
-    width: 185px;
-  }
-
-  .audit-visual {
-    flex: 0 0 185px;
-  }
-
-  .audit-avatar-img {
-    width: 180px;
-  }
-
-  .hire-visual {
-    flex: 0 0 190px;
-  }
-
-  .hire-avatar-img {
-    width: 165px;
-  }
-}
-
-/* Mobile Devices (Under 700px) - Balanced Single Column Stack */
-@media (max-width: 700px) {
-  .header-container,
-  .hero-container,
-  .risk-container,
-  .audit-container,
-  .hire-container,
-  .signoff-container,
-  .footer-container {
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 18px;
+    padding-right: 18px;
   }
 
   /* Header */
   .header-container {
-    height: 66px;
+    height: 64px;
   }
 
   .brand-logo {
-    height: 30px;
+    height: 28px;
   }
 
   .btn-talk {
-    height: 38px;
-    padding: 0 18px;
-    font-size: 14px;
+    height: 36px;
+    padding: 0 16px;
+    font-size: 13px;
+    gap: 6px;
   }
 
   /* Hero */
@@ -724,8 +703,8 @@ body {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding-top: 36px;
-    gap: 20px;
+    padding-top: 32px;
+    gap: 16px;
   }
 
   .hero-text-block {
@@ -734,7 +713,7 @@ body {
   }
 
   .hero-heading {
-    font-size: clamp(26px, 6.5vw, 36px);
+    font-size: 28px;
   }
 
   .hero-intro-group {
@@ -744,28 +723,28 @@ body {
 
   .hero-visual {
     flex: 0 0 auto;
-    width: 230px;
+    width: 200px;
     margin: 0 auto;
   }
 
   .hero-avatar-img {
-    width: 230px;
+    width: 200px;
   }
 
   /* Risk */
   .risk-section {
-    padding: 44px 0 24px 0;
+    padding: 38px 0 20px 0;
   }
 
   .risk-heading {
-    margin-bottom: 24px;
-    font-size: 21px;
+    margin-bottom: 20px;
+    font-size: 20px;
   }
 
   .risk-grid {
     flex-direction: column;
     align-items: center;
-    gap: 24px;
+    gap: 20px;
   }
 
   .risk-text-block {
@@ -774,24 +753,24 @@ body {
 
   .risk-visual {
     flex: 0 0 auto;
-    width: 200px;
+    width: 180px;
     margin: 0 auto;
   }
 
   .risk-avatar-img {
-    width: 200px;
+    width: 180px;
   }
 
   /* Audit */
   .audit-section {
-    padding: 28px 0 48px 0;
+    padding: 24px 0 40px 0;
   }
 
   .audit-grid {
     flex-direction: column-reverse;
     align-items: center;
     text-align: left;
-    gap: 24px;
+    gap: 20px;
   }
 
   .audit-text-block {
@@ -806,40 +785,40 @@ body {
 
   .audit-visual {
     flex: 0 0 auto;
-    width: 190px;
+    width: 180px;
     margin: 0 auto;
   }
 
   .audit-avatar-img {
-    width: 190px;
+    width: 180px;
   }
 
   .audit-cta-wrapper {
-    margin-top: 24px;
+    margin-top: 20px;
   }
 
   .btn-audit {
-    font-size: 14.5px;
-    padding: 0 20px;
-    height: 42px;
+    font-size: 13.5px;
+    padding: 0 18px;
+    height: 40px;
     width: 100%;
-    max-width: 380px;
+    max-width: 320px;
   }
 
   /* Talentra Hire */
   .hire-section {
-    padding: 44px 0 0 0;
+    padding: 38px 0 0 0;
   }
 
   .hire-heading {
-    margin-bottom: 24px;
-    font-size: 21px;
+    margin-bottom: 20px;
+    font-size: 20px;
   }
 
   .hire-grid {
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 16px;
   }
 
   .hire-text-block {
@@ -849,134 +828,58 @@ body {
 
   .hire-visual {
     flex: 0 0 auto;
-    width: 200px;
+    width: 180px;
     margin: 0 auto;
   }
 
   .hire-avatar-img {
-    width: 175px;
+    width: 155px;
   }
 
   .btn-talentra {
     margin-top: -20px;
-    margin-bottom: 30px;
+    margin-bottom: 24px;
     width: 100%;
-    max-width: 260px;
+    max-width: 240px;
   }
 
   /* Signoff */
   .signoff-section {
-    padding: 36px 0 44px 0;
+    padding: 32px 0 38px 0;
   }
 
   .signoff-grid {
     flex-direction: column;
-    gap: 16px;
+    gap: 14px;
     text-align: left;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
   }
 
   .signoff-quote {
-    font-size: 18px;
-    line-height: 1.4;
+    font-size: 17px;
+    line-height: 1.35;
     max-width: 100%;
   }
 
   .signoff-valediction {
-    font-size: 18px;
-    line-height: 1.4;
+    font-size: 17px;
+    line-height: 1.35;
     text-align: left;
   }
 
   .signoff-banner {
-    font-size: 13px;
-    padding: 10px 14px;
+    font-size: 12.5px;
+    padding: 8px 12px;
   }
 
   /* Footer */
   .footer-section {
-    padding: 28px 0;
+    padding: 24px 0;
   }
 
   .footer-container {
     flex-direction: column;
     align-items: flex-start;
-    gap: 24px;
-  }
-}
-
-/* Small Smartphone Devices (Under 440px) */
-@media (max-width: 440px) {
-  .header-container,
-  .hero-container,
-  .risk-container,
-  .audit-container,
-  .hire-container,
-  .signoff-container,
-  .footer-container {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-
-  .header-container {
-    height: 60px;
-  }
-
-  .brand-logo {
-    height: 27px;
-  }
-
-  .btn-talk {
-    height: 36px;
-    padding: 0 14px;
-    font-size: 13px;
-    gap: 6px;
-  }
-
-  .btn-talk .btn-arrow-icon {
-    width: 14px;
-    height: 14px;
-  }
-
-  .hero-heading {
-    font-size: 25px;
-  }
-
-  .hero-subheading {
-    font-size: 14px;
-  }
-
-  .hero-greeting {
-    font-size: 16px;
-  }
-
-  .hero-body {
-    font-size: 14px;
-  }
-
-  .risk-heading,
-  .hire-heading {
-    font-size: 19px;
-  }
-
-  .btn-audit {
-    font-size: 13px;
-    padding: 0 14px;
-    height: 40px;
-  }
-
-  .btn-talentra {
-    font-size: 13.5px;
-    padding: 0 16px;
-    height: 40px;
-  }
-
-  .signoff-banner {
-    font-size: 12px;
-    padding: 8px 10px;
-  }
-
-  .contact-item {
-    font-size: 14px;
+    gap: 20px;
   }
 }
