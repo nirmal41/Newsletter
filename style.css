@@ -1,17 +1,27 @@
 /* ==========================================================================
-   SIDAT Technologies & Digital - 100% Full Screen Responsive Stylesheet
-   Audited & Exactly Matched with Figma Node 3263:2389 ("Newsletter - 03")
+   SIDAT Technologies & Digital - 100% Full Viewport Responsive Stylesheet
+   Audited & Pixel-Accurately Matched with Figma Node 3263:2389 & Node 3295:497
    ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=TASA+Orbiter:wght@400;500;600;700&display=swap');
 
+/* Fallback alias for local TASA Orbiter font definitions */
+@font-face {
+  font-family: 'TASA Orbiter Display';
+  src: local('TASA Orbiter Display'), local('TASA Orbiter');
+  font-weight: 400 700;
+  font-display: swap;
+}
+
 :root {
-  --primary-color: #18557E;
-  --secondary-color: #A5CE8E;
+  --primary-blue: #18557E;
+  --secondary-green: #A5CE8E;
   --text-dark: #071C2A;
   --ice-blue: #E8FAFF;
   --audit-teal: #3AA0A4;
   --border-light: #E5E5E5;
+  --font-tasa: 'TASA Orbiter Display', 'TASA Orbiter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-inter: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 * {
@@ -24,18 +34,17 @@ html, body {
   width: 100%;
   min-height: 100%;
   overflow-x: hidden;
+  background-color: #ffffff;
 }
 
 body {
-  font-family: 'TASA Orbiter Display', 'TASA Orbiter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  background-color: #ffffff;
+  font-family: var(--font-tasa);
   color: var(--text-dark);
-  margin: 0;
-  padding: 0;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Master Full-Width Wrapper */
+/* Master Wrapper spanning 100% viewport */
 .newsletter-card {
   width: 100%;
   min-height: 100vh;
@@ -43,10 +52,10 @@ body {
   flex-direction: column;
   background-color: #ffffff;
   position: relative;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
-/* Common Container for Max-Width 1140px */
+/* Central Content Container: max-width 900px gives the perfect balance on widescreen */
 .header-container,
 .hero-container,
 .risk-container,
@@ -55,10 +64,10 @@ body {
 .signoff-container,
 .footer-container {
   width: 100%;
-  max-width: 1140px;
+  max-width: 900px;
   margin: 0 auto;
-  padding-left: 36px;
-  padding-right: 36px;
+  padding-left: 32px;
+  padding-right: 32px;
 }
 
 /* ==========================================================================
@@ -100,12 +109,13 @@ body {
   gap: 10px;
   height: 40px;
   padding: 0 24px;
-  background-color: var(--secondary-color);
+  background-color: var(--secondary-green);
   color: var(--text-dark);
   text-decoration: none;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-inter);
   font-weight: 500;
   font-size: 16px;
+  line-height: 1.5;
   letter-spacing: -1px;
   border-radius: 100px;
   transition: all 0.2s ease-in-out;
@@ -137,34 +147,34 @@ body {
    - Subtitle: TASA Orbiter Display Medium 16px, tracking -0.32px, uppercase
    - Greeting: TASA Orbiter Display Regular 18px, tracking -0.36px
    - Body: TASA Orbiter Display Regular 16px, line-height 20px, tracking -0.32px
+   - Avatar: 237px x 265px waist-up portrait sitting on bottom boundary
    ========================================================================== */
 .hero {
   width: 100%;
-  background-color: var(--primary-color);
+  background-color: var(--primary-blue);
   overflow: hidden;
   position: relative;
 }
 
 .hero-container {
-  min-height: 480px;
-  padding-top: 50px;
+  padding-top: 48px;
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  gap: 40px;
+  gap: 32px;
 }
 
 .hero-text-block {
-  flex: 1 1 55%;
-  max-width: 620px;
-  padding-bottom: 48px;
+  flex: 1 1 500px;
+  max-width: 520px;
+  padding-bottom: 44px;
   z-index: 2;
 }
 
 .hero-heading {
-  font-family: 'TASA Orbiter Display', 'TASA Orbiter', sans-serif;
+  font-family: var(--font-tasa);
   font-weight: 600;
-  font-size: clamp(34px, 4.2vw, 44px);
+  font-size: clamp(30px, 3.8vw, 44px);
   line-height: 100%;
   letter-spacing: -1.32px;
   text-transform: uppercase;
@@ -173,12 +183,12 @@ body {
 }
 
 .hero-subheading {
-  font-family: 'TASA Orbiter Display', 'TASA Orbiter', sans-serif;
+  font-family: var(--font-tasa);
   font-weight: 500;
   font-size: 16px;
   letter-spacing: -0.32px;
   text-transform: uppercase;
-  color: var(--secondary-color);
+  color: var(--secondary-green);
   margin-bottom: 24px;
 }
 
@@ -186,11 +196,11 @@ body {
   display: flex;
   flex-direction: column;
   gap: 14px;
-  max-width: 500px;
+  max-width: 480px;
 }
 
 .hero-greeting {
-  font-family: 'TASA Orbiter Display', 'TASA Orbiter', sans-serif;
+  font-family: var(--font-tasa);
   font-size: 18px;
   font-weight: 400;
   letter-spacing: -0.36px;
@@ -198,7 +208,7 @@ body {
 }
 
 .hero-body {
-  font-family: 'TASA Orbiter Display', 'TASA Orbiter', sans-serif;
+  font-family: var(--font-tasa);
   font-size: 16px;
   font-weight: 400;
   line-height: 20px;
@@ -208,21 +218,18 @@ body {
 }
 
 .hero-visual {
-  flex: 0 0 clamp(240px, 28vw, 360px);
-  height: clamp(380px, 44vw, 490px);
-  position: relative;
-  overflow: hidden;
+  flex: 0 0 250px;
   display: flex;
   align-items: flex-end;
   justify-content: center;
+  position: relative;
+  margin-bottom: 0;
+  line-height: 0;
 }
 
 .hero-avatar-img {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
+  width: 250px;
+  max-width: 100%;
   height: auto;
   display: block;
   user-select: none;
@@ -234,17 +241,17 @@ body {
    Figma:
    - Heading: TASA Orbiter Display SemiBold 24px, line-height 100%, tracking -1.2px
    - Paragraphs: TASA Orbiter Display Regular 14px, line-height 20px, tracking -0.28px
+   - Avatar: 210px x 250px waist-up portrait holding warning sign
    ========================================================================== */
 .risk-section {
   width: 100%;
   background-color: #ffffff;
-  padding: 65px 0 20px 0;
+  padding: 56px 0 32px 0;
   position: relative;
-  overflow: hidden;
 }
 
 .risk-heading {
-  font-family: 'TASA Orbiter Display', 'TASA Orbiter', sans-serif;
+  font-family: var(--font-tasa);
   font-weight: 600;
   font-size: clamp(20px, 2.5vw, 24px);
   line-height: 100%;
@@ -252,27 +259,26 @@ body {
   text-align: center;
   text-transform: uppercase;
   color: var(--text-dark);
-  margin-bottom: 40px;
+  margin-bottom: 36px;
 }
 
 .risk-grid {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: space-between;
-  gap: 40px;
+  gap: 36px;
 }
 
 .risk-text-block {
-  flex: 1 1 55%;
-  max-width: 600px;
+  flex: 1 1 500px;
+  max-width: 520px;
   display: flex;
   flex-direction: column;
   gap: 20px;
-  padding-bottom: 40px;
 }
 
 .risk-paragraph {
-  font-family: 'TASA Orbiter Display', 'TASA Orbiter', sans-serif;
+  font-family: var(--font-tasa);
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
@@ -281,21 +287,15 @@ body {
 }
 
 .risk-visual {
-  flex: 0 0 clamp(260px, 30vw, 380px);
-  height: clamp(340px, 40vw, 460px);
-  position: relative;
-  overflow: hidden;
+  flex: 0 0 220px;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
 }
 
 .risk-avatar-img {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
+  width: 210px;
+  max-width: 100%;
   height: auto;
   display: block;
   user-select: none;
@@ -306,12 +306,13 @@ body {
    Figma:
    - Lead Paragraph: TASA Orbiter Display Medium 14px, line-height 20px, tracking -0.28px, text-right
    - Body Paragraphs: TASA Orbiter Display Regular 14px, line-height 20px, tracking -0.28px, text-right
-   - CTA Button: TASA Orbiter Display Medium 16px, line-height 20px, tracking -0.32px
+   - Avatar: 202px x 229px waist-up smiling portrait on left
+   - Button: TASA Orbiter Display Medium 16px, line-height 20px, tracking -0.32px, bg #3AA0A4
    ========================================================================== */
 .audit-section {
   width: 100%;
   background-color: #ffffff;
-  padding: 40px 0 60px 0;
+  padding: 32px 0 56px 0;
   position: relative;
 }
 
@@ -319,35 +320,35 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 40px;
+  gap: 36px;
 }
 
 .audit-visual {
-  flex: 0 0 clamp(220px, 26vw, 340px);
+  flex: 0 0 215px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .audit-avatar-img {
-  width: 100%;
-  max-width: 320px;
+  width: 205px;
+  max-width: 100%;
   height: auto;
   display: block;
   user-select: none;
 }
 
 .audit-text-block {
-  flex: 1 1 55%;
-  max-width: 580px;
+  flex: 1 1 500px;
+  max-width: 520px;
   display: flex;
   flex-direction: column;
-  gap: 22px;
+  gap: 20px;
   text-align: right;
 }
 
 .audit-lead-text {
-  font-family: 'TASA Orbiter Display', 'TASA Orbiter', sans-serif;
+  font-family: var(--font-tasa);
   font-weight: 500;
   font-size: 14px;
   line-height: 20px;
@@ -356,7 +357,7 @@ body {
 }
 
 .audit-body-text {
-  font-family: 'TASA Orbiter Display', 'TASA Orbiter', sans-serif;
+  font-family: var(--font-tasa);
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
@@ -367,7 +368,7 @@ body {
 .audit-cta-wrapper {
   display: flex;
   justify-content: center;
-  margin-top: 40px;
+  margin-top: 36px;
   width: 100%;
 }
 
@@ -381,7 +382,7 @@ body {
   background-color: var(--audit-teal);
   color: #ffffff;
   text-decoration: none;
-  font-family: 'TASA Orbiter Display', 'TASA Orbiter', sans-serif;
+  font-family: var(--font-tasa);
   font-weight: 500;
   font-size: 16px;
   line-height: 20px;
@@ -399,22 +400,24 @@ body {
 }
 
 /* ==========================================================================
-   5. Talentra New Year Hire Section
+   5. Talentra New Year Hire Section (Figma Node 3264:2634 & Avatar Node 3295:497)
    Figma:
+   - Background: #E8FAFF
    - Heading: TASA Orbiter Display SemiBold 24px, line-height 100%, tracking -0.96px
    - Paragraphs: TASA Orbiter Display Regular 14px, line-height 20px, tracking -0.28px
-   - Button: TASA Orbiter Display Medium 16px, line-height 20px, tracking -0.32px
+   - Avatar Node 3295:497: 171px x 349px thumbs-up portrait
+   - Button: TASA Orbiter Display Medium 16px, line-height 20px, tracking -0.32px, bg white
    ========================================================================== */
 .hire-section {
   width: 100%;
   background-color: var(--ice-blue);
-  padding: 60px 0 0 0;
+  padding: 56px 0 0 0;
   position: relative;
   overflow: hidden;
 }
 
 .hire-heading {
-  font-family: 'TASA Orbiter Display', 'TASA Orbiter', sans-serif;
+  font-family: var(--font-tasa);
   font-weight: 600;
   font-size: clamp(20px, 2.5vw, 24px);
   line-height: 100%;
@@ -422,19 +425,19 @@ body {
   text-align: center;
   text-transform: uppercase;
   color: var(--text-dark);
-  margin-bottom: 40px;
+  margin-bottom: 36px;
 }
 
 .hire-grid {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  gap: 40px;
+  gap: 36px;
 }
 
 .hire-text-block {
-  flex: 1 1 55%;
-  max-width: 600px;
+  flex: 1 1 500px;
+  max-width: 520px;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -442,7 +445,7 @@ body {
 }
 
 .hire-paragraph {
-  font-family: 'TASA Orbiter Display', 'TASA Orbiter', sans-serif;
+  font-family: var(--font-tasa);
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
@@ -451,29 +454,28 @@ body {
 }
 
 .hire-visual {
-  flex: 0 0 clamp(240px, 28vw, 360px);
-  height: clamp(380px, 44vw, 500px);
-  position: relative;
-  overflow: hidden;
+  flex: 0 0 220px;
   display: flex;
-  align-items: flex-end;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+  line-height: 0;
 }
 
 .hire-avatar-img {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
+  width: 180px;
+  max-width: 100%;
   height: auto;
   display: block;
+  user-select: none;
 }
 
 .btn-talentra {
-  position: absolute;
-  bottom: 30px;
-  right: 0;
+  margin-top: -24px;
+  margin-bottom: 36px;
+  position: relative;
+  z-index: 2;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -483,21 +485,20 @@ body {
   background-color: #ffffff;
   color: var(--text-dark);
   text-decoration: none;
-  font-family: 'TASA Orbiter Display', 'TASA Orbiter', sans-serif;
+  font-family: var(--font-tasa);
   font-weight: 500;
   font-size: 16px;
   line-height: 20px;
   letter-spacing: -0.32px;
   border-radius: 100px;
-  box-shadow: 0px 10px 25px rgba(255, 255, 255, 0.3);
+  box-shadow: 0px 10px 25px rgba(255, 255, 255, 0.5), 0px 4px 14px rgba(7, 28, 42, 0.08);
   transition: all 0.2s ease-in-out;
   white-space: nowrap;
-  z-index: 10;
 }
 
 .btn-talentra:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
 }
 
 /* ==========================================================================
@@ -510,7 +511,7 @@ body {
 .signoff-section {
   width: 100%;
   background-color: #ffffff;
-  padding: 50px 0 60px 0;
+  padding: 48px 0 56px 0;
   position: relative;
 }
 
@@ -518,22 +519,22 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 40px;
-  margin-bottom: 36px;
+  gap: 32px;
+  margin-bottom: 32px;
 }
 
 .signoff-quote {
-  font-family: 'TASA Orbiter Display', 'TASA Orbiter', sans-serif;
+  font-family: var(--font-tasa);
   font-weight: 500;
   font-size: 20px;
   line-height: 23px;
   letter-spacing: -0.4px;
   color: var(--text-dark);
-  max-width: 520px;
+  max-width: 460px;
 }
 
 .signoff-valediction {
-  font-family: 'TASA Orbiter Display', 'TASA Orbiter', sans-serif;
+  font-family: var(--font-tasa);
   font-weight: 500;
   font-size: 20px;
   line-height: 23px;
@@ -549,7 +550,7 @@ body {
   text-align: center;
   background: linear-gradient(90deg, rgba(165, 206, 142, 0) 0%, rgba(165, 206, 142, 0.3) 50%, rgba(165, 206, 142, 0) 100%);
   border-radius: 8px;
-  font-family: 'TASA Orbiter Display', 'TASA Orbiter', sans-serif;
+  font-family: var(--font-tasa);
   font-weight: 500;
   font-size: 14px;
   line-height: 20px;
@@ -561,10 +562,11 @@ body {
    7. Footer Section
    Figma:
    - Contact items: TASA Orbiter Display Regular 16px, tracking -0.32px
+   - Social tiles: 42.84px x 34.29px, radius 4.86px, bg rgba(255,255,255,0.1)
    ========================================================================== */
 .footer-section {
   width: 100%;
-  background-color: var(--primary-color);
+  background-color: var(--primary-blue);
   padding: 27px 0;
   position: relative;
 }
@@ -573,7 +575,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 40px;
+  gap: 32px;
 }
 
 .footer-brand-col {
@@ -621,10 +623,10 @@ body {
 .contact-item {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
+  gap: 8px;
   color: #ffffff;
   text-decoration: none;
-  font-family: 'TASA Orbiter Display', 'TASA Orbiter', sans-serif;
+  font-family: var(--font-tasa);
   font-weight: 400;
   font-size: 16px;
   letter-spacing: -0.32px;
@@ -643,8 +645,8 @@ body {
    Responsive Breakpoints
    ========================================================================== */
 
-/* Tablet (768px to 1024px) - Fluid 2-column adaptation */
-@media (max-width: 1024px) {
+/* Tablet (700px to 920px) */
+@media (max-width: 920px) {
   .header-container,
   .hero-container,
   .risk-container,
@@ -656,33 +658,41 @@ body {
     padding-right: 24px;
   }
 
-  .hero-container {
-    min-height: 440px;
-    gap: 24px;
+  .hero-visual {
+    flex: 0 0 220px;
   }
 
-  .hero-visual {
-    flex: 0 0 280px;
-    height: 420px;
+  .hero-avatar-img {
+    width: 220px;
   }
 
   .risk-visual {
-    flex: 0 0 300px;
-    height: 400px;
+    flex: 0 0 190px;
+  }
+
+  .risk-avatar-img {
+    width: 185px;
+  }
+
+  .audit-visual {
+    flex: 0 0 185px;
+  }
+
+  .audit-avatar-img {
+    width: 180px;
   }
 
   .hire-visual {
-    flex: 0 0 280px;
-    height: 420px;
+    flex: 0 0 190px;
   }
 
-  .btn-talentra {
-    right: 0;
+  .hire-avatar-img {
+    width: 165px;
   }
 }
 
-/* Mobile Devices (Under 768px) - Clean single column stack */
-@media (max-width: 768px) {
+/* Mobile Devices (Under 700px) - Balanced Single Column Stack */
+@media (max-width: 700px) {
   .header-container,
   .hero-container,
   .risk-container,
@@ -696,11 +706,11 @@ body {
 
   /* Header */
   .header-container {
-    height: 70px;
+    height: 66px;
   }
 
   .brand-logo {
-    height: 32px;
+    height: 30px;
   }
 
   .btn-talk {
@@ -714,9 +724,8 @@ body {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    min-height: auto;
     padding-top: 36px;
-    gap: 24px;
+    gap: 20px;
   }
 
   .hero-text-block {
@@ -725,7 +734,7 @@ body {
   }
 
   .hero-heading {
-    font-size: clamp(28px, 6vw, 38px);
+    font-size: clamp(26px, 6.5vw, 36px);
   }
 
   .hero-intro-group {
@@ -734,19 +743,23 @@ body {
   }
 
   .hero-visual {
-    width: 260px;
-    height: 380px;
+    flex: 0 0 auto;
+    width: 230px;
     margin: 0 auto;
+  }
+
+  .hero-avatar-img {
+    width: 230px;
   }
 
   /* Risk */
   .risk-section {
-    padding: 45px 0 20px 0;
+    padding: 44px 0 24px 0;
   }
 
   .risk-heading {
-    margin-bottom: 28px;
-    font-size: 22px;
+    margin-bottom: 24px;
+    font-size: 21px;
   }
 
   .risk-grid {
@@ -757,18 +770,21 @@ body {
 
   .risk-text-block {
     max-width: 100%;
-    padding-bottom: 0;
   }
 
   .risk-visual {
-    width: 260px;
-    height: 360px;
+    flex: 0 0 auto;
+    width: 200px;
     margin: 0 auto;
+  }
+
+  .risk-avatar-img {
+    width: 200px;
   }
 
   /* Audit */
   .audit-section {
-    padding: 30px 0 50px 0;
+    padding: 28px 0 48px 0;
   }
 
   .audit-grid {
@@ -789,34 +805,41 @@ body {
   }
 
   .audit-visual {
-    width: 220px;
+    flex: 0 0 auto;
+    width: 190px;
     margin: 0 auto;
   }
 
+  .audit-avatar-img {
+    width: 190px;
+  }
+
   .audit-cta-wrapper {
-    margin-top: 30px;
+    margin-top: 24px;
   }
 
   .btn-audit {
     font-size: 14.5px;
     padding: 0 20px;
     height: 42px;
+    width: 100%;
+    max-width: 380px;
   }
 
-  /* Hire */
+  /* Talentra Hire */
   .hire-section {
-    padding: 45px 0 30px 0;
+    padding: 44px 0 0 0;
   }
 
   .hire-heading {
-    margin-bottom: 28px;
-    font-size: 22px;
+    margin-bottom: 24px;
+    font-size: 21px;
   }
 
   .hire-grid {
     flex-direction: column;
     align-items: center;
-    gap: 24px;
+    gap: 20px;
   }
 
   .hire-text-block {
@@ -825,30 +848,32 @@ body {
   }
 
   .hire-visual {
-    width: 260px;
-    height: auto;
-    min-height: 360px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex: 0 0 auto;
+    width: 200px;
+    margin: 0 auto;
+  }
+
+  .hire-avatar-img {
+    width: 175px;
   }
 
   .btn-talentra {
-    position: static;
-    margin: 16px auto 0 auto;
-    display: inline-flex;
+    margin-top: -20px;
+    margin-bottom: 30px;
+    width: 100%;
+    max-width: 260px;
   }
 
   /* Signoff */
   .signoff-section {
-    padding: 40px 0 50px 0;
+    padding: 36px 0 44px 0;
   }
 
   .signoff-grid {
     flex-direction: column;
     gap: 16px;
     text-align: left;
-    margin-bottom: 28px;
+    margin-bottom: 24px;
   }
 
   .signoff-quote {
@@ -863,20 +888,25 @@ body {
     text-align: left;
   }
 
+  .signoff-banner {
+    font-size: 13px;
+    padding: 10px 14px;
+  }
+
   /* Footer */
   .footer-section {
-    padding: 30px 0;
+    padding: 28px 0;
   }
 
   .footer-container {
     flex-direction: column;
     align-items: flex-start;
-    gap: 28px;
+    gap: 24px;
   }
 }
 
-/* Small Smartphone Devices (Under 480px) */
-@media (max-width: 480px) {
+/* Small Smartphone Devices (Under 440px) */
+@media (max-width: 440px) {
   .header-container,
   .hero-container,
   .risk-container,
@@ -889,11 +919,11 @@ body {
   }
 
   .header-container {
-    height: 64px;
+    height: 60px;
   }
 
   .brand-logo {
-    height: 28px;
+    height: 27px;
   }
 
   .btn-talk {
@@ -909,41 +939,41 @@ body {
   }
 
   .hero-heading {
-    font-size: 26px;
+    font-size: 25px;
+  }
+
+  .hero-subheading {
+    font-size: 14px;
+  }
+
+  .hero-greeting {
+    font-size: 16px;
+  }
+
+  .hero-body {
+    font-size: 14px;
+  }
+
+  .risk-heading,
+  .hire-heading {
+    font-size: 19px;
   }
 
   .btn-audit {
-    width: 100%;
-    max-width: 100%;
     font-size: 13px;
     padding: 0 14px;
     height: 40px;
-    gap: 6px;
   }
 
   .btn-talentra {
-    width: 100%;
-    max-width: 100%;
-    font-size: 13px;
-    padding: 0 14px;
+    font-size: 13.5px;
+    padding: 0 16px;
     height: 40px;
-    gap: 6px;
-  }
-
-  .hero-visual,
-  .risk-visual {
-    width: 220px;
-    height: 320px;
-  }
-
-  .hire-visual {
-    width: 220px;
-    min-height: 320px;
   }
 
   .signoff-banner {
     font-size: 12px;
-    padding: 10px 12px;
+    padding: 8px 10px;
   }
 
   .contact-item {
